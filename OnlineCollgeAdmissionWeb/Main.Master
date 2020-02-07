@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="OnlineCollgeAdmissionWeb.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 49px;
+        }
+        .auto-style2 {
+            height: 42px;
+        }
+    </style>
+</head>
+<body style="height: 59px">
+    <form id="form1" runat="server">
+        <div>
+            <table style="width: 1100px; margin: auto">
+                <tr style="width: 1100px; height: 50px">
+                    <td class="auto-style1">
+                        <img src ="Image/logo.png" class="auto-style2" />
+                    </td>
+                    <td style ="width: 120px">SBM Education</td>
+                    <td style ="width: 900px; text-align: right">
+                        <asp:ImageButton ID ="btnFb"  runat ="server" Height="34px" ImageUrl="~/Image/fb.png" Width="46px"/>
+                        &nbsp;&nbsp;
+                        <asp:ImageButton ID ="btnInsta"  runat ="server" Height="39px" ImageUrl="~/Image/insta.png" Width="43px"/>
+                        &nbsp;&nbsp;
+                        <asp:ImageButton ID ="bthTwitter"  runat ="server" Height="43px" ImageUrl="~/Image/twitter.png" Width="56px"/>
+                    </td>
+                </tr>
+                <tr style="width: 1100px; height: 40px; background-color:Highlight">
+                    <td colspan="3">
+                        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" DynamicHorizontalOffset="60" Font-Size="Large" ForeColor="Black" Orientation="Horizontal">
+                            <DynamicMenuStyle HorizontalPadding="160px" />
+                            <Items>
+                                <asp:MenuItem Text="Home" Value="Home" NavigateUrl ="~/Home.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Login" Value="Login" NavigateUrl ="~/Login.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Registration" Value="Registration" NavigateUrl ="~/SignUp.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="About us" Value="About us" NavigateUrl ="~/About.aspx"></asp:MenuItem>
+                            </Items>
+                            <StaticMenuItemStyle HorizontalPadding="60px" />
+                        </asp:Menu>                       
+                    </td>
+                </tr>
+                <tr style="width: 1100px; height: 20px; text-align:center">
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="cphMainHolder" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

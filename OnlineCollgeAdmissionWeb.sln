@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollgeAdmissionWeb", "OnlineCollgeAdmissionWeb\OnlineCollgeAdmissionWeb.csproj", "{05287115-9BE5-44BA-924D-ECD627F3B314}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8506C559-8A87-4DE1-8920-D3A247D89C3C} = {8506C559-8A87-4DE1-8920-D3A247D89C3C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollegeAdmission.BL", "OnlineCollegeAdmission.BL\OnlineCollegeAdmission.BL.csproj", "{C68B092B-581E-4108-82C8-4E87CE7811E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollegeAdmission.Common", "OnlineCollegeAdmission.Common\OnlineCollegeAdmission.Common.csproj", "{04AA3FFE-7093-42C2-83B1-EC74F9EC2512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollegeAdmission.DAL", "OnlineCollegeAdmission.DAL\OnlineCollegeAdmission.DAL.csproj", "{8506C559-8A87-4DE1-8920-D3A247D89C3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollegeAdmission.Entity", "OnlineCollegeAdmission.Entity\OnlineCollegeAdmission.Entity.csproj", "{2BEE4627-68F1-46DD-9B09-3B197079F760}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05287115-9BE5-44BA-924D-ECD627F3B314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05287115-9BE5-44BA-924D-ECD627F3B314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05287115-9BE5-44BA-924D-ECD627F3B314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05287115-9BE5-44BA-924D-ECD627F3B314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C68B092B-581E-4108-82C8-4E87CE7811E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C68B092B-581E-4108-82C8-4E87CE7811E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C68B092B-581E-4108-82C8-4E87CE7811E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C68B092B-581E-4108-82C8-4E87CE7811E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AA3FFE-7093-42C2-83B1-EC74F9EC2512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AA3FFE-7093-42C2-83B1-EC74F9EC2512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AA3FFE-7093-42C2-83B1-EC74F9EC2512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AA3FFE-7093-42C2-83B1-EC74F9EC2512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8506C559-8A87-4DE1-8920-D3A247D89C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8506C559-8A87-4DE1-8920-D3A247D89C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8506C559-8A87-4DE1-8920-D3A247D89C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8506C559-8A87-4DE1-8920-D3A247D89C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEE4627-68F1-46DD-9B09-3B197079F760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEE4627-68F1-46DD-9B09-3B197079F760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEE4627-68F1-46DD-9B09-3B197079F760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEE4627-68F1-46DD-9B09-3B197079F760}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF3EE0AE-1388-41FC-8256-93F6FE754745}
+	EndGlobalSection
+EndGlobal
