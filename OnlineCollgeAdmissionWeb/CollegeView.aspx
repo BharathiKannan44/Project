@@ -10,6 +10,9 @@
             <Columns>
                 <asp:TemplateField HeaderText="S.No">
                     <ItemTemplate>
+
+
+
                         <asp:Label ID="lblSerialNumber" Text='<%# Container.DataItemIndex + 1 %>' runat="server" />
                     </ItemTemplate>
                     <FooterTemplate>
