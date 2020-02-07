@@ -41,6 +41,7 @@
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl ="~/Home.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Login" Value="Login" NavigateUrl ="~/Login.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Registration" Value="Registration" NavigateUrl ="~/SignUp.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="View Colleges" Value="ViewCollege" NavigateUrl ="~/CollegeView.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="About us" Value="About us" NavigateUrl ="~/About.aspx"></asp:MenuItem>
                             </Items>
                             <StaticMenuItemStyle HorizontalPadding="60px" />

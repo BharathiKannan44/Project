@@ -3,10 +3,18 @@ namespace OnlineCollegeAdmission.Entity
 {
     public class College
     {
-        internal string collegeCode { get; set; }
-        internal string collegeName { get; set; }
-        internal string collegeWebsite { get; set; }
-        internal double admissionFee { get; set; }
-        internal int totalSeats { get; set; }
+        public string collegeCode { get; set; }
+        public string collegeName { get; set; }
+        public string collegeWebsite { get; set; }
+        public int admissionFee { get; set; }
+        public int totalSeats { get; set; }
+        public College(string collegeCode, string collegeName, string collegeWebsite, int admissionfee, int totalSeats)
+        {
+            this.collegeCode = collegeCode;
+            this.collegeName = collegeName;
+            this.collegeWebsite = collegeWebsite;
+            this.admissionFee = admissionfee;
+            this.totalSeats = totalSeats;
+        }
     }
 }
