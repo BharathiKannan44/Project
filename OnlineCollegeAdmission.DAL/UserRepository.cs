@@ -6,7 +6,7 @@ namespace OnlineCollegeAdmission.DAL
 {
     public class UserRepository
     {
-        public static bool Login(string EmailId, string password)
+        public bool Login(string EmailId, string password)
         {
             using (SqlConnection sqlConnection = DButils.GetDbconnection())
             {
@@ -31,7 +31,7 @@ namespace OnlineCollegeAdmission.DAL
                 }
             }
         }
-        public static bool SignUp(User user)
+        public bool SignUp(User user)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace OnlineCollegeAdmission.DAL
                 return false;
             }
         }
-        public static int GetId(User user)
+        public int GetId(User user)
         {
             using (SqlConnection sqlConnection = DButils.GetDbconnection())
             {

@@ -7,10 +7,9 @@ namespace OnlineCollegeAdmission.DAL
 {
     public class CollegeRepository
     {
-        public static void AddCollege(College college)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["Online-College-Admission"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+        public void AddCollege(College college)
+        {          
+            using (SqlConnection connection = DButils.GetDbconnection())
             {
                 using (SqlCommand sqlcommand = new SqlCommand("sp_InsertCollege", connection))
                 {
@@ -25,10 +24,9 @@ namespace OnlineCollegeAdmission.DAL
                 }
             }
         }
-        public static void UpdateCollege(string CollegeCode, int fee, int seats)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["Online-College-Admission"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+        public void UpdateCollege(string CollegeCode, int fee, int seats)
+        {          
+            using (SqlConnection connection = DButils.GetDbconnection())
             {               
                 using (SqlCommand sqlCommand = new SqlCommand("sp_UpdateCollege", connection))
                 {
@@ -41,23 +39,22 @@ namespace OnlineCollegeAdmission.DAL
                 }                  
             }               
         }
-        public static void DeleteCollege(string CollegeCode)
+        public void DeleteCollege(string collegeCode)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Online-College-Admission"].ConnectionString;
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            using (SqlConnection sqlConnection = DButils.GetDbconnection())
             {
-                using (SqlCommand sqlCommand = new SqlCommand("sp_DeleteCollege" + CollegeCode, sqlConnection))
+                using (SqlCommand sqlCommand = new SqlCommand("sp_DeleteCollege", sqlConnection))
                 {
                     sqlCommand.CommandType = CommandType.StoredProcedure;
+                    sqlCommand.Parameters.AddWithValue("@CollegeCode", collegeCode);
                     sqlConnection.Open();
                     sqlCommand.ExecuteNonQuery();
                 }
             }
         }
-        public static DataTable GetCollegeTable()
+        public DataTable GetCollegeTable()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Online-College-Admission"].ConnectionString;
-            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            using (SqlConnection sqlConnection = DButils.GetDbconnection())
             {
                 using (SqlCommand sqlCommand = new SqlCommand("sp_DisplayCollege", sqlConnection))
                 {

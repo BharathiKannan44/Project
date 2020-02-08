@@ -7,7 +7,7 @@ namespace OnlineCollgeAdmissionWeb
 {
     public partial class CollegeTable : System.Web.UI.Page
     {
-        
+        CollegeBL collegeBL = new CollegeBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -18,14 +18,15 @@ namespace OnlineCollgeAdmissionWeb
 
         protected void BindData()
         {
-            gvCollegeTable.DataSource = CollegeBL.GetCollegeTable();
+            gvCollegeTable.DataSource = collegeBL.GetCollegeTable();
             gvCollegeTable.DataBind();
         }
+
         protected void GvCollegeTable_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             try
             {
-                CollegeBL.DeleteCollege(gvCollegeTable.DataKeys[e.RowIndex].Values["CollegeCode"].ToString());
+                collegeBL.DeleteCollege(gvCollegeTable.DataKeys[e.RowIndex].Values["CollegeCode"].ToString());
                 BindData();
             }
             catch(Exception)
@@ -47,7 +48,7 @@ namespace OnlineCollgeAdmissionWeb
                 string collegeCode = gvCollegeTable.DataKeys[e.RowIndex].Values["CollegeCode"].ToString();
                 int fee = Convert.ToInt32((gvCollegeTable.Rows[e.RowIndex].FindControl("txtAdmissionFee") as TextBox).Text);
                 int seats = Convert.ToInt32((gvCollegeTable.Rows[e.RowIndex].FindControl("txtSeats") as TextBox).Text);
-                CollegeBL.UpdateCollege(collegeCode, fee, seats);
+                collegeBL.UpdateCollege(collegeCode, fee, seats);
                 gvCollegeTable.EditIndex = -1;
                 BindData();
             }
@@ -74,13 +75,14 @@ namespace OnlineCollgeAdmissionWeb
                 int fee = Convert.ToInt32((gvCollegeTable.FooterRow.FindControl("txtAdmissionFeeFooter") as TextBox).Text);
                 int seats = Convert.ToInt32((gvCollegeTable.FooterRow.FindControl("txtSeatsFooter") as TextBox).Text);
                 College college = new College(collegeCode, collegeName, collegeWebsite, fee, seats);
-                CollegeBL.AddCollege(college);
+                collegeBL.AddCollege(college);
                 gvCollegeTable.EditIndex = -1;
                 BindData();
             }
             catch (Exception)
             {
-                Response.Write("<script>alert(The data is not Inserted...... ')</script>");
+                Response.Write("<script>alert(The data is not Inserted" +
+                    "...... ')</script>");
             }              
         }
 

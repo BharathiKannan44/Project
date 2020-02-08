@@ -11,6 +11,7 @@ namespace OnlineCollgeAdmissionWeb
 {
     public partial class Login : System.Web.UI.Page
     {
+        UserBL userBL = new UserBL();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,7 +19,7 @@ namespace OnlineCollgeAdmissionWeb
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (UserBL.Login(txtEmailId.Text, txtPassword.Text))
+            if (userBL.Login(txtEmailId.Text, txtPassword.Text))
                 Response.Write("<script>alert('Login sucessfully')</script>");
             else
                 Response.Write("<script>alert('Incorrect password or userId')</script>");

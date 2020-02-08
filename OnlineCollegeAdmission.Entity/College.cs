@@ -2,7 +2,7 @@
 namespace OnlineCollegeAdmission.Entity
 {
     public class College
-    {
+  {
         public string collegeCode { get; set; }
         public string collegeName { get; set; }
         public string collegeWebsite { get; set; }

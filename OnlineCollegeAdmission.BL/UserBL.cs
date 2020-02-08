@@ -1,22 +1,26 @@
-﻿
-using OnlineCollegeAdmission.DAL;
+﻿using OnlineCollegeAdmission.DAL;
 using OnlineCollegeAdmission.Entity;
 
 namespace OnlineCollegeAdmission.BL
 {
     public class UserBL
     {
-        public static bool Login(string EmailId, string password)
+        UserRepository userRepository;
+        public UserBL()
         {
-            return UserRepository.Login(EmailId, password);
+            userRepository = new UserRepository();
         }
-        public static bool SignUp(User user)
+        public bool Login(string EmailId, string password)
         {
-            return UserRepository.SignUp(user);
+            return userRepository.Login(EmailId, password);
         }
-        public static int GetId(User user)
+        public bool SignUp(User user)
         {
-            return UserRepository.GetId(user);
+            return userRepository.SignUp(user);
+        }
+        public int GetId(User user)
+        {
+            return userRepository.GetId(user);
         }
     }
 }

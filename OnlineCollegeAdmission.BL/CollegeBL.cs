@@ -6,21 +6,26 @@ namespace OnlineCollegeAdmission.BL
 {
     public class CollegeBL
     {
-        public static void AddCollege(College college)
+        CollegeRepository collegeRepository;
+        public CollegeBL()
         {
-            CollegeRepository.AddCollege(college);
+            collegeRepository = new CollegeRepository();
         }
-        public static void UpdateCollege(string collegeCode, int fee, int seats)
+        public void AddCollege(College college)
         {
-            CollegeRepository.UpdateCollege(collegeCode, fee, seats);
+            collegeRepository.AddCollege(college);
         }
-        public static void DeleteCollege(string collegeCode)
+        public void UpdateCollege(string collegeCode, int fee, int seats)
         {
-            CollegeRepository.DeleteCollege(collegeCode);
+            collegeRepository.UpdateCollege(collegeCode, fee, seats);
         }
-        public static DataTable GetCollegeTable()
+        public void DeleteCollege(string collegeCode)
         {
-            return CollegeRepository.GetCollegeTable();
+            collegeRepository.DeleteCollege(collegeCode);
+        }
+        public DataTable GetCollegeTable()
+        {
+            return collegeRepository.GetCollegeTable();
         }
     }
 }

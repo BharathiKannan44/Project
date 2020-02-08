@@ -135,10 +135,6 @@
       <Project>{04aa3ffe-7093-42c2-83b1-ec74f9ec2512}</Project>
       <Name>OnlineCollegeAdmission.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\OnlineCollegeAdmission.DAL\OnlineCollegeAdmission.DAL.csproj">
-      <Project>{8506C559-8A87-4DE1-8920-D3A247D89C3C}</Project>
-      <Name>OnlineCollegeAdmission.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\OnlineCollegeAdmission.Entity\OnlineCollegeAdmission.Entity.csproj">
       <Project>{2bee4627-68f1-46dd-9b09-3b197079f760}</Project>
       <Name>OnlineCollegeAdmission.Entity</Name>
