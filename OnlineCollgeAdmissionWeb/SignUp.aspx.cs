@@ -27,6 +27,7 @@ namespace OnlineCollgeAdmissionWeb
                 //Response.Write(UserBL.GetId(user) + "is your Id");
                 Response.Redirect("Login.aspx");
             }
+
         }
     }
 
