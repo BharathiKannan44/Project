@@ -4,31 +4,21 @@
     <title>Login</title>
 </asp:Content>
 <asp:Content ID="cntLogin" ContentPlaceHolderID="cphMainHolder" runat="server">
-     <div align="center">
+     <div align = "center">
             <h1>Login</h1>
-            <table class="auto-style">
+            <table>
                 <tr>
                     <td>Email Id</td>
                     <td>
                         <asp:TextBox ID="txtEmailId" runat="server"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvEmailId" runat="server"
-                            ErrorMessage="Email Id Invalid" ControlToValidate="txtEmailId">
-                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>Password</td>
                     <td>
                         <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                    </td>
-                    <td>
-                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server"
-                            ErrorMessage="Invalid password" ControlToValidate="txtPassword">
-                        </asp:RequiredFieldValidator>
-                    </td>
-                </tr>
+                    </td>                   
+                </tr>               
             </table>
             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click"></asp:Button>
         </div>

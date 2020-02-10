@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="cntSignUp" ContentPlaceHolderID="cphMainHolder" runat="server">
     <div align="center">
-        <table >
+        <table>
             <h2>Sign Up</h2>
             <tr>
                 <td>First Name</td>
@@ -26,7 +26,12 @@
             <tr>
                 <td>Date of birth</td>
                 <td>
-                    <asp:TextBox ID="txtDob" runat="server" Type="date"></asp:TextBox>
+                    <asp:TextBox ID="txtDob" runat="server" TextMode="Date"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:CustomValidator ID="cvDob" runat="server" ControlToValidate="txtDob" OnServerValidate="CheckDob"
+                        ErrorMessage="Please select your Date of Birth" Font-Italic="True" ForeColor="Red">
+                    </asp:CustomValidator>
                 </td>
             </tr>
             <tr>
@@ -36,8 +41,12 @@
                         <asp:ListItem Text="Select Gender" Value="Select"></asp:ListItem>
                         <asp:ListItem Text="Male" Value="Male"></asp:ListItem>
                         <asp:ListItem Text="Female" Value="Female"></asp:ListItem>
-                        <asp:ListItem Text="Others" Value="Others"></asp:ListItem>
                     </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:CustomValidator ID="cvGender" runat="server" ControlToValidate="lstGender"
+                        ErrorMessage="Please select Gender" ClientValidationFunction="CheckGender" Font-Italic="True" ForeColor="Red" OnServerValidate="cvGender_ServerValidate">
+                    </asp:CustomValidator>
                 </td>
             </tr>
 
@@ -45,6 +54,10 @@
                 <td>Email Id</td>
                 <td>
                     <asp:TextBox ID="txtEmail" runat="server" Type="Email"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvEmailId" runat="server"
+                        ErrorMessage="Name required" ControlToValidate="txtEmail" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td>
                     <asp:RegularExpressionValidator ID="revEmail" runat="server"
@@ -55,11 +68,16 @@
             <tr>
                 <td>Phone Number</td>
                 <td>
-                    <asp:TextBox ID="txtPhoneNumber" runat="server" Type="Number"></asp:TextBox>
+                    <asp:TextBox ID="txtPhoneNumber" runat="server"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="rfvPhoneNumber" runat="server"
                         ErrorMessage="Phone Number required" ControlToValidate="txtPhoneNumber" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+                        ControlToValidate="txtPhoneNumber" ErrorMessage="Please enter valid Mobile number!"
+                        ValidationExpression="^([7-9]{1})([0-9]{9})$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -74,7 +92,7 @@
                     <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Both Password are not Equal."
+                    <asp:CompareValidator ID="cvPassword" runat="server" ErrorMessage="Both Passwords are not Equal."
                         ControlToValidate="txtConfirmPassword" ControlToCompare="txtPassword" Font-Italic="True" ForeColor="Red"></asp:CompareValidator>
                 </td>
             </tr>

@@ -74,8 +74,8 @@
     <Content Include="Image\fb.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Login.aspx" />
+    <Content Include="MainStyleSheet.css" />
     <Content Include="SignUp.aspx" />
-    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

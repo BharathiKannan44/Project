@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="OnlineCollgeAdmissionWeb.Main" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="OnlineCollgeAdmissionWeb.Main" %>
 
 <!DOCTYPE html>
 
@@ -35,8 +35,7 @@
                 </tr>
                 <tr style="width: 1100px; height: 40px; background-color:Highlight">
                     <td colspan="3">
-                        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" DynamicHorizontalOffset="60" Font-Size="Large" ForeColor="Black" Orientation="Horizontal">
-                            <DynamicMenuStyle HorizontalPadding="160px" />
+                        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" DynamicHorizontalOffset="60" Font-Size="Large" ForeColor="Black" Orientation="Horizontal">                            
                             <Items>
                                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl ="~/Home.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Login" Value="Login" NavigateUrl ="~/Login.aspx"></asp:MenuItem>

@@ -1,21 +1,24 @@
 ﻿using OnlineCollegeAdmission.BL;
 using OnlineCollegeAdmission.Entity;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace OnlineCollgeAdmissionWeb
 {
-    public partial class CollegeTable : System.Web.UI.Page
+    public partial class CollegeView : System.Web.UI.Page
     {
-        CollegeBL collegeBL = new CollegeBL();
+        ICollegeBL collegeBL = new CollegeBL();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
-            {
+            {                
                 BindData();
             }
         }
-
         protected void BindData()
         {
             gvCollegeTable.DataSource = collegeBL.GetCollegeTable();
@@ -29,7 +32,7 @@ namespace OnlineCollgeAdmissionWeb
                 collegeBL.DeleteCollege(gvCollegeTable.DataKeys[e.RowIndex].Values["CollegeCode"].ToString());
                 BindData();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 Response.Write("<script>alert(The data is not Deleted...... ')</script>");
             }
@@ -56,15 +59,14 @@ namespace OnlineCollgeAdmissionWeb
             {
                 Response.Write("<script>alert(The data is not update...... ')</script>");
             }
-            
+
         }
 
-        protected void GvCollegeTable_RowEditing(  object sender, GridViewEditEventArgs e)
+        protected void GvCollegeTable_RowEditing(object sender, GridViewEditEventArgs e)
         {
             gvCollegeTable.EditIndex = e.NewEditIndex;
             BindData();
         }
-
         protected void LbInsert_Click(object sender, EventArgs e)
         {
             try
@@ -83,8 +85,7 @@ namespace OnlineCollgeAdmissionWeb
             {
                 Response.Write("<script>alert(The data is not Inserted" +
                     "...... ')</script>");
-            }              
+            }
         }
-
     }
 }

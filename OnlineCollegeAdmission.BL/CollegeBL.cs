@@ -4,9 +4,16 @@ using System.Data;
 
 namespace OnlineCollegeAdmission.BL
 {
-    public class CollegeBL
+    public interface ICollegeBL
     {
-        CollegeRepository collegeRepository;
+        void AddCollege(College college);
+        void UpdateCollege(string CollegeCode, int fee, int seats);
+        void DeleteCollege(string collegeCode);
+        DataTable GetCollegeTable();
+    }
+    public class CollegeBL : ICollegeBL
+    {
+        ICollegeRepository collegeRepository;
         public CollegeBL()
         {
             collegeRepository = new CollegeRepository();

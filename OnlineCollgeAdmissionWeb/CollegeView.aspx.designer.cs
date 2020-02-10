@@ -11,7 +11,7 @@ namespace OnlineCollgeAdmissionWeb
 {
 
 
-    public partial class CollegeTable
+    public partial class CollegeView
     {
 
         /// <summary>

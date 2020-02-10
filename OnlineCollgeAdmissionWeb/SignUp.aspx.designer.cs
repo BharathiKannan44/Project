@@ -51,6 +51,15 @@ namespace OnlineCollgeAdmissionWeb
         protected global::System.Web.UI.WebControls.TextBox txtDob;
 
         /// <summary>
+        /// cvDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvDob;
+
+        /// <summary>
         /// lstGender control.
         /// </summary>
         /// <remarks>
@@ -60,6 +69,15 @@ namespace OnlineCollgeAdmissionWeb
         protected global::System.Web.UI.WebControls.DropDownList lstGender;
 
         /// <summary>
+        /// cvGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvGender;
+
+        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace OnlineCollgeAdmissionWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
+        /// rfvEmailId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEmailId;
 
         /// <summary>
         /// revEmail control.
@@ -94,6 +121,15 @@ namespace OnlineCollgeAdmissionWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPhoneNumber;
+
+        /// <summary>
+        /// RegularExpressionValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// txtPassword control.

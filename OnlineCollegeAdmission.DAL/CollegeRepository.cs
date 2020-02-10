@@ -5,7 +5,14 @@ using OnlineCollegeAdmission.Entity;
 
 namespace OnlineCollegeAdmission.DAL
 {
-    public class CollegeRepository
+    public interface ICollegeRepository
+    {
+        void AddCollege(College college);
+        void UpdateCollege(string CollegeCode, int fee, int seats);
+        void DeleteCollege(string collegeCode);
+        DataTable GetCollegeTable();
+    }
+    public class CollegeRepository : ICollegeRepository
     {
         public void AddCollege(College college)
         {          

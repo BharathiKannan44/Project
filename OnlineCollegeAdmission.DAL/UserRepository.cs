@@ -4,9 +4,14 @@ using OnlineCollegeAdmission.Entity;
 
 namespace OnlineCollegeAdmission.DAL
 {
-    public class UserRepository
+    public interface IUserRepository
     {
-        public bool Login(string EmailId, string password)
+        string Login(string EmailId, string password);
+        bool SignUp(User user);
+    }
+    public class UserRepository : IUserRepository
+    {
+        public string Login(string EmailId, string password)
         {
             using (SqlConnection sqlConnection = DButils.GetDbconnection())
             {
@@ -19,14 +24,12 @@ namespace OnlineCollegeAdmission.DAL
                         sqlCommand.Parameters.AddWithValue("@EmailId", EmailId);
                         sqlCommand.Parameters.AddWithValue("@Password", password);
                         sqlConnection.Open();
-                        string flag = sqlCommand.ExecuteScalar().ToString();
-                        if (flag == "true")
-                            return true;
-                        return false;
+                        string role = sqlCommand.ExecuteScalar().ToString();
+                        return role;
                     }
                     catch (NullReferenceException)
                     {
-                        return false;
+                        return null;
                     }
                 }
             }
@@ -61,20 +64,6 @@ namespace OnlineCollegeAdmission.DAL
             catch (SqlException)
             {
                 return false;
-            }
-        }
-        public int GetId(User user)
-        {
-            using (SqlConnection sqlConnection = DButils.GetDbconnection())
-            {
-                string command = "sp_GetId";
-                using (SqlCommand sqlCommand = new SqlCommand(command, sqlConnection))
-                {
-                    sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@EmailId", user.emailId);
-                    sqlConnection.Open();
-                    return (int)sqlCommand.ExecuteScalar();
-                }
             }
         }
     }
